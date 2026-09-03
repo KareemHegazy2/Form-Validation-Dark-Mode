@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validation Form</title>
+    <style>
+
+        
+            .darkmode button#darkmode {
+            background-color: #c0bcbc;
+            color: rgb(50, 48, 48);
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 50px;
+            float: right;
+        }
+        .darkmode label {
+            color: #afa8a8;
+            font-size: 18px;
+
+        }
+
+        .darkmode {
+            background-image: linear-gradient(to bottom, #332e2e, #000000);
+            height: 100vh; 
+        }
+
+        .darkmode div#Validation {
+            width: 250px;
+            background-image: linear-gradient(to bottom, #212020, #000000);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 10px 10px 5px rgba(100, 100, 100, 0.4);
+            height: auto;
+            margin: auto;
+        }
+
+        .darkmode #divname,
+        .darkmode #divusername,
+        .darkmode #divemail,
+        .darkmode #divphone,
+        .darkmode #divpass {
+            margin-bottom: 10px;
+        }
+
+        .darkmode input {
+
+            background-color: #575151;
+            padding: 4px 10px;
+            border: 2px solid #151515;
+            border-radius: 5px;
+
+        }
+
+        .darkmode button[type="submit"] {
+            background-color: #369239;
+            color: white;
+            display: flex;
+            margin: auto;
+            padding: 10px 10px;
+            border-radius: 10px;
+
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .darkmode button[type="submit"]:hover {
+            background-color: #2e7d2e;
+            color: rgb(193, 193, 193);
+        }
+        .darkmode .error {
+            color: red;
+            font-size: 14px;
+            display: none;
+            width: 60%;
+        }
+
+
+        
+
+
+  
+        button#darkmode {
+            background-color: #292727;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 50px;
+            float: right;
+        }
+        label {
+            color: #292727;
+            font-size: 18px;
+
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-image: linear-gradient(to bottom, #cebdbd, #e0e0e0);
+            /* display: flex;
+            justify-content: center;
+            align-items: center; */
+            height: 100vh; 
+        }
+
+        div#Validation {
+            width: 250px;
+            background-image: linear-gradient(to bottom, #8f8787, #909090);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 10px 10px 5px rgba(0, 0, 0, 0.4);
+            height: auto;
+            margin: auto;
+        }
+
+        #divname,
+        #divusername,
+        #divemail,
+        #divphone,
+        #divpass {
+            margin-bottom: 10px;
+        }
+
+        input {
+
+            background-color: #eee8e8;
+            padding: 4px 10px;
+            border: 2px solid #747474;
+            border-radius: 5px;
+
+        }
+
+        button[type="submit"] {
+            background-color: #369239;
+            color: white;
+            display: flex;
+            margin: auto;
+            padding: 10px 10px;
+            border-radius: 10px;
+
+            align-items: center;
+            cursor: pointer;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #2e7d2e;
+            color: rgb(193, 193, 193);
+        }
+        .error {
+            color: red;
+            font-size: 14px;
+            display: none;
+            width: 60%;
+        } 
+        .success {
+            color: green;
+            font-size: 14px;
+            font-weight: bold;
+            display: none;
+            width: 60%;
+        } 
+    </style>
+</head>
+
+<div id="mood">
+<body class="">
+    <button id="darkmode">Dark Mode</button>
+    <br>
+    
+    <div id="Validation">
+        <form id="validationForm" action="../session 13/validation.html" method="post">
+            <div id="divname">
+                <label for="name">Name:</label>
+                <br>
+                <input type="text" id="name" placeholder="Enter Your Name">
+                <p id="nameerror" class="error">The Name Must Be Between 3 And 15 Characters</p>
+            </div>
+            <div id="divusername">
+                <label for="userName">User Name:</label>
+                <br>
+                <input type="text" id="userName" placeholder="Enter Your User Name">
+                <p id="usererror" class = "error">The User Name Must Be Between 4 And 10 Characters</p>
+            </div>
+            <div id="divemail">
+                <label for="email">Email:</label>
+                <br>
+                <input type="email" id="email" placeholder="Enter Your Email">
+                <p id="emailerror" class="error">Please Enter A Valid Email Address</p>
+            </div>
+            <div id="divphone">
+                <label for="phone">Phone:</label>
+                <br>
+                <input type="tel" id="phone" placeholder="Enter Your Phone Number">
+                <p id="phoneerror" class="error">Please Enter A Valid Phone Number(01xxxxxxxxx)</p>
+            </div>
+            <div id="divpass">
+                <label for="password">Password:</label>
+                <br>
+                <input type="password" id="password" placeholder="Enter Your Password" >
+                <p id="passworderror" class="error">The password must match the format: letters@numbers</p>
+            </div>
+            <button type="submit">Submit</button>
+            <p id="errorform" class="error">Please fill out the form correctly before submitting.</p>
+            <p id="sucform" class="success">Form submitted successfully!</p>
+        </form>
+    </div>
+
+</body>
+</div>
+<script src="Validation.js"></script>
+</html>
