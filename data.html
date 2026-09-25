@@ -31,5 +31,31 @@
         </tbody>
     </table>
 </body>
-<script  src="Data.js"></script>
+<script>
+    
+const dataTable = document.getElementById("data-table");
+const data = [];
+const request = new XMLHttpRequest();
+request.open("GET", "https://jsonplaceholder.typicode.com/posts");
+request.send();
+request.addEventListener("readystatechange", () => { // Add an event listener for the "readystatechange" event of the XMLHttpRequest object
+    console.log(request.readyState);
+    if (request.readyState == 4) {
+
+        console.log(`Request completed with status: ${request.status}`);
+        const data = JSON.parse(request.response);
+
+        for (let i = 0; i < data.length; i++) {
+            dataTable.innerHTML += `
+        <tr>
+          <td>${data[i].id}</td>
+          <td>${data[i].title}</td>
+          <td>${data[i].body}</td>
+        </tr>
+      `;
+
+        }
+    }
+});
+</script>
 </html>
