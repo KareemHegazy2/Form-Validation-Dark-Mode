@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validation Form</title>
+    <style>
+        /* ضبط الصناديق الأساسية للريسبونسف */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, #cebdbd, #e0e0e0);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            transition: background 0.3s ease;
+        }
+
+        /* حاوية زر الدارك مود لضبط موضعه بمرونة */
+        .top-bar {
+            width: 100%;
+            max-width: 420px;
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 20px;
+        }
+
+        button#darkmode {
+            background-color: #292727;
+            color: #ffffff;
+            padding: 10px 18px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        /* كارت الفورم المرن */
+        div#Validation {
+            width: 100%;
+            max-width: 420px; /* لن يزيد عن 420px في الشاشات الكبيرة */
+            background: linear-gradient(to bottom, #8f8787, #909090);
+            padding: 25px 20px;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: inline-block;
+            color: #292727;
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+
+        input {
+            width: 100%; /* تملأ عرض الحاوية بالكامل */
+            background-color: #eee8e8;
+            padding: 10px 12px;
+            border: 2px solid #747474;
+            border-radius: 6px;
+            font-size: 14px;
+            outline: none;
+        }
+
+        input:focus {
+            border-color: #369239;
+        }
+
+        button[type="submit"] {
+            width: 100%; /* في الموبايل والديسكتوب يسهل النقر عليه */
+            background-color: #369239;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: background-color 0.2s ease;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #2e7d2e;
+        }
+
+        .error {
+            color: #d90429;
+            font-size: 13px;
+            margin-top: 5px;
+            display: none;
+            width: 100%;
+        }
+
+        .success {
+            color: #2b9348;
+            font-size: 14px;
+            font-weight: bold;
+            margin-top: 10px;
+            text-align: center;
+            display: none;
+            width: 100%;
+        }
+
+        /* ================== DARK MODE STYLES ================== */
+        body.darkmode {
+            background: linear-gradient(to bottom, #1f1d1d, #0d0d0d);
+        }
+
+        body.darkmode button#darkmode {
+            background-color: #e0e0e0;
+            color: #121212;
+        }
+
+        body.darkmode div#Validation {
+            background: linear-gradient(to bottom, #2a2727, #181717);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+        }
+
+        body.darkmode label {
+            color: #dfdada;
+        }
+
+        body.darkmode input {
+            background-color: #3a3636;
+            color: #ffffff;
+            border-color: #555050;
+        }
+
+        body.darkmode .error {
+            color: #ff6b6b;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="top-bar">
+        <button id="darkmode">Dark Mode</button>
+    </div>
+
+    <div id="Validation">
+        <form id="validationForm" action="data.html">
+            <div class="form-group" id="divname">
+                <label for="name">Name:</label>
+                <input type="text" id="name" placeholder="Enter Your Name">
+                <p id="nameerror" class="error">The Name Must Be Between 3 And 15 Characters</p>
+            </div>
+
+            <div class="form-group" id="divusername">
+                <label for="userName">User Name:</label>
+                <input type="text" id="userName" placeholder="Enter Your User Name">
+                <p id="usererror" class="error">The User Name Must Be Between 4 And 10 Characters</p>
+            </div>
+
+            <div class="form-group" id="divemail">
+                <label for="email">Email:</label>
+                <input type="email" id="email" placeholder="Enter Your Email">
+                <p id="emailerror" class="error">Please Enter A Valid Email Address</p>
+            </div>
+
+            <div class="form-group" id="divphone">
+                <label for="phone">Phone:</label>
+                <input type="tel" id="phone" placeholder="Enter Your Phone Number">
+                <p id="phoneerror" class="error">Please Enter A Valid Phone Number (01xxxxxxxxx)</p>
+            </div>
+
+            <div class="form-group" id="divpass">
+                <label for="password">Password:</label>
+                <input type="password" id="password" placeholder="Enter Your Password">
+                <p id="passworderror" class="error">The password must match the format: letters@numbers</p>
+            </div>
+
+            <button type="submit">Submit</button>
+            <p id="errorform" class="error">Please fill out the form correctly before submitting.</p>
+            <p id="sucform" class="success">Form submitted successfully!</p>
+        </form>
+    </div>
+
+    <script src="Validation.js"></script>
+</body>
+
+</html>
